@@ -1,11 +1,11 @@
 # 出现奇数K次与出现一次 不能配次
-
 def getK(data, k):
     s = ''
     for i in range(0, 32):
         s = s + str(int(data % k))
         data = data / k
     return s[::-1]
+
 
 if __name__ == '__main__':
 
@@ -47,4 +47,5 @@ if __name__ == '__main__':
         res = t
 
     fres = int(res, k)
+
     pass
