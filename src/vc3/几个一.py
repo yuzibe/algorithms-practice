@@ -6,6 +6,6 @@ if __name__ == '__main__':
 
     while x != 0:
         res += 1
-        x = (x-1)&x
+        x = (x - 1) & x
 
     pass
