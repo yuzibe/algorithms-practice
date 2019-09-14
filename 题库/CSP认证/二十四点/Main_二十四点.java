@@ -7,12 +7,14 @@ import java.util.Stack;
 
 public class Main_二十四点 {
 
-    private static char[] op = {'+', '-', '*', '/'};
-    private static char[] opPriority = {1, 1, 2, 2};
+    static Scanner scanner;
+
+    static char[] op = {'+', '-', '*', '/'};
+    static char[] opPriority = {1, 1, 2, 2};
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
 
         int n = scanner.nextInt();
 
@@ -27,7 +29,7 @@ public class Main_二十四点 {
         }
     }
 
-    private static int f(String input) {
+    static int f(String input) {
         char[] inputChars = input.toCharArray();
         Stack<Character> opStack = new Stack<Character>();
         Stack<Integer> intStack = new Stack<Integer>();
@@ -57,8 +59,7 @@ public class Main_二十四点 {
         return intStack.pop();
     }
 
-    private static int calculate(Integer opInt2, Character opChar,
-                                 Integer opInt1) {
+    static int calculate(Integer opInt2, Character opChar, Integer opInt1) {
         String opStr = String.valueOf(op);
         int indexOfOpChar = opStr.indexOf(opChar);
         if (indexOfOpChar == 0) {
@@ -76,8 +77,7 @@ public class Main_二十四点 {
         return 0;
     }
 
-    private static boolean morePriority(Character curOp,
-                                        Stack<Character> opStack) {
+    static boolean morePriority(Character curOp, Stack<Character> opStack) {
         if (opStack.size() == 0) {
             return true;
         }
@@ -89,7 +89,7 @@ public class Main_二十四点 {
         return opPriority[indexOfCurOp] - opPriority[indexOfTopOp] > 0;
     }
 
-    private static boolean isOp(char curChar) {
+    static boolean isOp(char curChar) {
         String opStr = String.valueOf(op);
         return opStr.contains(String.valueOf(curChar));
     }
